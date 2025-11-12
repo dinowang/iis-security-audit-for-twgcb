@@ -1,0 +1,532 @@
+[
+  {
+    "item_number": 1,
+    "id": "TWGCB-04-014-0001",
+    "category": "基本 設定",
+    "name": "網站內容 存放位置",
+    "description": "■ 這項原則設定決定網站內容存放 之實體路徑位置是否可在系統磁 區中 ■ 將網站內容存放在非系統磁區, 可避免網站/應用程式耗盡系統磁 碟空間,亦可避免網站/應用程式 存在檔案讀取與寫入(File I/O)相關 漏洞時,影響系統機密性或完整 性",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\動作\\編輯站台\\基 本設定\\編輯站台\\實體 路徑",
+    "value": "存放在非系 統磁區"
+  },
+  {
+    "item_number": 2,
+    "id": "TWGCB-04-014-0002",
+    "category": "基本 設定",
+    "name": "主機名稱",
+    "description": "■這項原則設定決定是否每個站台 都必須設定主機名稱 ■ 主機名稱也稱為主機標頭名稱 (Host header)或網域名稱 ■ 每個 Web網站可由「IP位址」、 「連接埠」及「主機名稱」等3 個要素構成一組唯一的識別,用 來接收與回應請求 ■ 網站管理者可透過設定不同的「IP 位址」、「連接埠」或「主機名 稱」,達到在1台伺服器上架設 多個網站之目的,所以,當「IP 位址」與「連接埠」固定時,管 理者就可運用不同之主機名稱以 架設多個網站 ■所有站台都設定主機名稱,除便 於識別外,可降低遭受 DNS 重新 綁定攻擊之風險,以及防止透過 IP 掃描方式識別出 IIS 上所使用之 應用程式",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\動作\\編輯站台\\繫 結\\站台繫結\\編輯\\主機 名稱",
+    "value": "每個站台都 必須設定主 機名稱"
+  },
+  {
+    "item_number": 3,
+    "id": "TWGCB-04-014-0003",
+    "category": "基本 設定",
+    "name": "瀏覽目錄",
+    "description": "■這項原則設定決定是否啟用瀏覽 目錄功能 ■ 若啟用瀏覽目錄功能,當使用者 沒有指定要瀏覽之檔案時,伺服 器會依照預設文件之設定(例如: index.htm、default.htm 或 default.asp 等),將網頁傳送給使 用者。若管理者停用預設文件之 功能,或者伺服器找不到預設文 件設定之檔案時,IIS會將該資料 夾編製成目錄網頁,傳送給使用 者,使用者藉此可得知網站目錄 結構,所以如非必要,建議停用 此功能",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 瀏覽目錄\\動作\\開啟功 能\\動作\\設為「停用」",
+    "value": "停用"
+  },
+  {
+    "item_number": 4,
+    "id": "TWGCB-04-014-0004",
+    "category": "基本 設定",
+    "name": "應用程式 集區識別",
+    "description": "■ 這項原則設定決定所有應用程式 集區之「識別」屬性內容 ■應用程式集區識別中所設定之帳 號,是IIS 實際執行工作者處理序 「w3wp.exe」的帳號 ■ IIS 內建 ApplicationPoolIdentity 帳 戶,並賦予最小權限,供應用程 式集區使用,可避免應用程式遭 受威脅時,因執行帳號權限過高 而造成系統更大危害,此外,亦 可避免以往使用 Network Service 帳號執行時,因網站服務需求變 更 Network Service 帳號權限後, 導致其他同樣以 Network Service 帳號執行之應用程式獲得非必要 的權限 ■ 預設應用程式集區 (DefaultAppPool)以最小權限之 ApplicationPoolIdentity 身分執 行。即使每個集區都設定 ApplicationPoolIdentity 做為識 別,IIS會為不同集區建立不同之 虛擬帳號做為對應,以達到應用 程式集區獨立執行的效果",
+    "location": "應用 程式 集區",
+    "path": "IIS 管理員\\伺服器\\應用 程式集區 \\DefaultAppPool 與其他 自行新增的應用程式集 區\\動作\\編輯應用程式 集區\\進階設定\\處理序 模型\\識別",
+    "value": "ApplicationPo olIdentity"
+  },
+  {
+    "item_number": 5,
+    "id": "TWGCB-04-014-0005",
+    "category": "基本 設定",
+    "name": "應用程式 集區",
+    "description": "■ 這項原則設定決定是否每個站台 皆設定唯一之應用程式集區 ■ 每個站台設定唯一之應用程式集 區,可集中運用資源以提升效 能,並可避免因應用程式集區間 之相互影響,而產生一個網站異 常導致其他網站也異常之情況 ■ 所有站台預設皆使用 DefaultAppPool 應用程式集區",
+    "location": "應用 程式 集區",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\動作\\編輯站台\\基 本設定\\應用程式集區\\ 選取\\應用程式集區",
+    "value": "每個站台皆 設定唯一的 應用程式集 區"
+  },
+  {
+    "item_number": 6,
+    "id": "TWGCB-04-014-0006",
+    "category": "基本 設定",
+    "name": "匿名使用 者識別",
+    "description": "■這項原則設定決定匿名使用者識 別是否設為「應用程式集區識 別」 ■將匿名驗證中之「匿名使用者識 別」設定為「應用程式集區識 別」,可確保匿名使用者以最小 權限之身分執行,且可簡化站台 管理工作",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 驗證\\動作\\開啟功能\\匿 名驗證\\動作\\編輯\\編輯 匿名驗證認證\\匿名使用 者識別",
+    "value": "應用程式集 區識別"
+  },
+  {
+    "item_number": 7,
+    "id": "TWGCB-04-014-0007",
+    "category": "基本 設定",
+    "name": "WebDAV 功能",
+    "description": "■這項原則設定決定是否停用 WebDAV(Web Distributed Authoring and Versioning)功能 ■ WebDAV 是一種以HTTP 或 HTTPS 通訊協定為基礎,提供與 遠端伺服器進行檔案維護之標 準,允許用戶端在網頁伺服器上 建立、移動及刪除檔案與資源 ■ 停用 WebDAV 以減少可能因存取 控制設定錯誤而導致未經授權存 取檔案之情況,進而提升網頁伺 服器安全性",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system.webServer\\webd avlauthoringlenabled",
+    "value": "False"
+  },
+  {
+    "item_number": 8,
+    "id": "TWGCB-04-014-0008",
+    "category": "設定 驗證 與授 權",
+    "name": "表單驗證 需要 SSL",
+    "description": "■這項原則設定決定使用表單驗證 時,是否須以SSL方式進行資料 傳輸 ■ 表單驗證會將使用者帳號與密碼 以純文字格式傳送到伺服器,將 可能導致使用者登入帳密資訊外 洩,改採 SSL連線方式保護登入 資訊,有助於減少使用者資訊遭 竊取之風險",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system.weblauthenticati on forms requireSSL",
+    "value": "True"
+  },
+  {
+    "item_number": 9,
+    "id": "TWGCB-04-014-0009",
+    "category": "設定 驗證 與授 權",
+    "name": "表單驗證 Cookie 模 式",
+    "description": "■這項原則設定決定表單驗證是否 使用 Cookie ■ 表單驗證 Cookie 模式選項如下: (1)UseUri : 不使用 Cookie (2)UseCookies:不論裝置為何, 永遠使用 Cookie (3)AutoDetect:如果裝置設定檔支 援 Cookie,則使用 Cookie。否 則,不使用Cookie。針對已知 支援 Cookie 之桌面瀏覽器, ASP.NET 會進行檢查以判斷是 否啟用 Cookie (4)UseDeviceProfile:如果裝置設 定檔支援 Cookie,則使用 Cookie。否則,不使用 Cookie。ASP.NET 不會進行檢 查來判斷是否要在支援 Cookie 之裝置上啟用 Cookie ■使用者通過身分驗證登入站台 後,表單驗證會在Cookie 中維護 一份驗證資訊,讓已通過驗證的 使用者不需要對每個要求都輸入 帳號密碼,當 Cookie 過期或找不 到有效之Cookie時,使用者將被 重新導向至指定登入頁面 ■ 使用 Cookie 管理使用者連線狀 態,可藉由防止ASP.NET將 Session 資訊透過URL 傳送,以避 免 Session ID 在代理伺服器紀錄檔 或瀏覽歷程紀錄中被找到,降低 Session 遭竊取之風險 ■ 預設設定為「UseDeviceProfile」",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system. weblauthenticati on\\forms cookieless",
+    "value": "UseCookies"
+  },
+  {
+    "item_number": 10,
+    "id": "TWGCB-04-014-0010",
+    "category": "設定 驗證 與授 權",
+    "name": "表單驗證 Cookie 保 護模式",
+    "description": "■這項原則設定決定表單驗證 Cookie 之保護模式 ■ 表單驗證 Cookie 的保護模式選項 如下: (1)加密及驗證:同時指定用來協 助保護 Cookie 之資料驗證及加 密。此選項是使用已設定之資 料驗證演算法,如果可供使用 且金鑰夠長(48位元組以上),可 使用 3DES 來進行加密 (2)無:針對僅使用 Cookie 來啟用 個人化且安全性需求較弱的站 台,指定同時停用加密及驗 證。此設定雖耗用最少資源, 但不建議使用 (3)加密:指定 Cookie 使用 3DES 或 DES 進行加密,但是不會在 Cookie 上執行資料驗證 (4)驗證:此設定會確認 Cookie 內 容在轉送過程中是否未被變更 ■採用「加密及驗證」保護模式, 可確保 Cookie 資料之機密性與完 整性,可降低 Session 遭到竊取或 偽冒攻擊之風險 ■預設設定為「加密及驗證」",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system.weblauthenticati on\\forms \\protection",
+    "value": "All"
+  },
+  {
+    "item_number": 11,
+    "id": "TWGCB-04-014-0011",
+    "category": "設定 驗證 與授 權",
+    "name": "基本驗證 需要 SSL",
+    "description": "■這項原則設定決定使用基本驗證 時,是否須以SSL方式進行資料 傳輸 ■使用基本驗證時,使用者輸入使 用名稱與密碼後,密碼以 Base64 編碼並傳送至伺服器進行驗證, 因未加密,容易遭攻擊者側錄取 得帳密資料,故若要使用基本驗 證,應搭配SSL 進行加密傳輸",
+    "location": "站台",
+    "path": "■ 首先確認啟用 https: IIS 管理員\\伺服器\\站 台\\網站\\動作\\編輯站台 | 繫結 ■ SSL 設定: IIS 管理員\\伺服器\\站 台\\網站\\IIS\\SSL 設定| 動作\\開啟功能\\勾選 「需要 SSL」",
+    "value": "需要 SSL"
+  },
+  {
+    "item_number": 12,
+    "id": "TWGCB-04-014-0012",
+    "category": "設定 驗證 與授 權",
+    "name": "credentials 元素",
+    "description": "■ 這項原則設定決定&lt;credentials&gt;元 素是否可存在於設定檔 (machine.config 或 web.config)中 ■使用表單驗證時,若使用 &lt;credentials&gt;元素,會將帳密資訊 儲存在設定檔,基於安全理由, 建議從設定檔中移除&lt;credentials&gt; 元素段落",
+    "location": "站台",
+    "path": "開啟 web.config 與 machine.config,檢視是 否存在&lt;credentials&gt;元 素段落",
+    "value": "移除 &lt;credentials&gt; 元素段落"
+  },
+  {
+    "item_number": 13,
+    "id": "TWGCB-04-014-0013",
+    "category": "ASP. NET 設定 建議",
+    "name": "以 retail 模 式部署 Web 應用 程式",
+    "description": "■這項原則設定決定是否以retail 模 式部署 Web 應用程式 ■ 以 retail 模式部署 Web 應用程式 時,ASP.NET 將停用追蹤輸出、 停用偵錯功能,並停止將詳細系 統錯誤訊息傳送給遠端使用者, 以避免資訊洩漏 ■ 預設值為 False",
+    "location": "系統 檔案",
+    "path": "■ 開啟 machine.config 檔 案,路徑如下: %systemroot%\\Microso ft.NET Framework64 或 Framework framework 版本 \\CONFIG\\machine.conf ig ■ 設定 machine.config: 在&lt;system.web&gt;下加入 設定值&lt;deployment retail=\"true\" /&gt;",
+    "value": "True"
+  },
+  {
+    "item_number": 14,
+    "id": "TWGCB-04-014-0014",
+    "category": "ASP. NET 設定 建議",
+    "name": "偵錯功能",
+    "description": "■這項原則設定決定是否啟用偵錯 功能 ■開發人員通常在開發過程中啟用 偵錯模式,網站上線後若未關閉 偵錯模式,惡意人士將可利用此 功能獲取應用程式相關資訊 ■ 雖然以 retail 模式部署 Web 應用 程式時,即會停用偵錯功能,但 基於縱深防禦概念,額外再個別 停用偵錯功能,可降低因設定錯 誤所造成之影響 ■ 設定為 False,代表停用偵錯功 能,設定為True,代表啟用偵錯 功能",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system.web\\compilation\\ debug",
+    "value": "False"
+  },
+  {
+    "item_number": 15,
+    "id": "TWGCB-04-014-0015",
+    "category": "ASP. NET 設定 建議",
+    "name": "自訂錯誤 訊息顯示 模式",
+    "description": "■ 這項原則設定決定當網頁發生錯 誤時,以何種模式顯示自訂錯誤 訊息頁面 ■ 自訂錯誤訊息顯示模式有3種: (1)開啟(On):啟用自訂錯誤頁 面。如果未指定預設的錯誤網 頁時,則使用者與本機端都將 顯示 ASP.NET 錯誤訊息頁面 (2)關閉(Off):停用自訂錯誤頁 面,使用者與本機端都將顯示 ASP.NET 錯誤訊息頁面 (3)僅限遠端(RemoteOnly):只對 遠端使用者啟用自訂錯誤頁 面,本機顯示 ASP.NET 錯誤訊 息頁面 ■建議設定為開啟或僅限遠端,限 制使用者僅能看到自訂錯誤頁 面,以避免惡意人士利用此功能 獲取應用程式相關資訊 ■ 預設值為僅限遠端(RemoteOnly)",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system.web customError s\\mode",
+    "value": "On 或 RemoteOnly"
+  },
+  {
+    "item_number": 16,
+    "id": "TWGCB-04-014-0016",
+    "category": "ASP. NET",
+    "name": "HTTP 詳 細錯誤訊",
+    "description": "■這項原則設定決定當網頁發生錯 誤時,以何種模式顯示HTTP 詳 細錯誤訊息頁面 ■ HTTP 詳細錯誤資訊可能包含有關 應用程式如何運行之細節資訊, 確保在遠端使用者端不顯示 HTTP 詳細錯誤資訊,可減少惡意人士 獲取有關應用程式運作資訊之風 險 ■ 藉由錯誤回應設定可決定 HTTP 詳細錯誤訊息頁面顯示方式: (1)本機要求的詳細錯誤及遠端要 求的自訂錯誤網頁 (DetailedLocalOnly):本機端顯 示詳細錯誤訊息,非本機端顯 示自訂錯誤頁面 (2)自訂錯誤網頁(Custom):不管 本機端或是遠端使用者,皆顯 示自訂錯誤頁面 (3)詳細錯誤(Detailed):本機端與 遠端使用者皆顯示詳細錯誤訊 息 ■ 預設值為 DetailedLocalOnly",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\IS\\錯誤網頁\\動作\\ 開啟功能\\動作\\編輯功 能設定\\編輯錯誤網頁的 設定\\錯誤回應",
+    "value": "本機要求的 詳細錯誤及 遠端要求的"
+  },
+  {
+    "item_number": 17,
+    "id": "TWGCB-04-014-0017",
+    "category": "ASP. NET 設定 建議",
+    "name": "ASP.NET 堆疊追蹤",
+    "description": "■這項原則設定決定是否關閉網頁 堆疊追蹤模式 ■ ASP.NET 可透過設定&lt;trace&gt;元素 來控制如何被蒐集、儲存及顯示 追蹤結果。啟用追蹤後,每個網 頁都會要求加入追蹤訊息,這些 訊息會附加到頁面輸出或儲存在 應用程式追蹤紀錄,建議停用追 蹤,以減少惡意人士取得詳細追 蹤資訊之風險 ■ 雖然以 retail 模式部署 Web 應用 程式時,即會停用追蹤輸出,但 基於縱深防禦概念,額外再設定 停用追蹤功能,可降低因設定錯 誤所造成之影響",
+    "location": "■ 伺服 器 ■站台 ■ 網頁",
+    "path": "■ 伺服器級別設定: machine.config 與 web.config ■ 站台級別與每個 ASP.NET 網站級別個 別設定:IIS 管理員\\伺 服器\\站台\\網站\\管理\\ 設定編輯器\\動作\\開啟 功能\\區段 \\system.web\\tracelenabl ed",
+    "value": "■ 自設定檔與 ASP.NET 網 頁中,移除 所有 Trace=\"true\" 或 trace enabled=\"tru e\"內容 · False"
+  },
+  {
+    "item_number": 18,
+    "id": "TWGCB-04-014-0018",
+    "category": "ASP. NET 設定 建議",
+    "name": "工作階段 狀態 Cookie 模 式",
+    "description": "■這項原則設定決定是否使用 Cookie 儲存工作階段狀態(Session state) ■ 工作階段狀態 Cookie 模式選項如 下: (1)使用 Cookie:不論瀏覽器或裝 置是否支援 Cookie,Cookie 都 會保存使用者資料 (2)使用 URI:不論瀏覽器或裝置 是否支援 Cookie,呼叫的功能 都會使用查詢字串儲存識別項 (3)使用裝置設定檔:ASP.NET根 據 HttpBrowserCapabilities 設定 決定是否使用 Cookie。如果 HttpBrowserCapabilities 設定表 示瀏覽器或裝置支援 Cookie, 就會使用 Cookie,否則便會在 查詢字串中使用識別項 (4)自動偵測:ASP.NET 決定要求 瀏覽器或裝置是否支援 Cookie。如果要求的瀏覽器或裝 置支援 Cookie,AutoDetect 便 會使用 Cookie 保存使用者資 料,否則便會在查詢字串中使 用識別項。如果瀏覽器或裝置 支援 Cookie,但目前已停用 Cookie,要求的功能還是會使用 Cookie ■使用 Cookie 管理使用者連線狀 態,可藉由防止ASP.NET將 Session 資訊透過URL 傳送,避免 Session ID 在代理伺服器記錄檔或 瀏覽歷程紀錄中被找到,以降低 Session 遭竊取之風險 ■ 預設值為使用 Cookie",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system.web sessionState Icookieless",
+    "value": "UseCookies"
+  },
+  {
+    "item_number": 19,
+    "id": "TWGCB-04-014-0019",
+    "category": "ASP. NET 設定 建議",
+    "name": "httpOnlyC ookies",
+    "description": "■ 這項原則設定決定 Cookie 是否只 能經由HTTP(S)協定來存取,其 餘之 JavaScript、Silverlight 或 Flash 等前端程式皆無法存取 ■ 設定網站中的 Cookie 屬性為 HttpOnly,讓 Cookie 只供瀏覽器 與網站伺服器間之網頁溝通,可 避免 Cookie 被 JavaScript 等相關 前端程式存取,以降低攻擊者利 用網站既有的 XSS 漏洞並透過 JavaScript 取得 Cookie 資料之機會",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system.web\\httpCookies\\ httpOnlyCookies",
+    "value": "True"
+  },
+  {
+    "item_number": 20,
+    "id": "TWGCB-04-014-0020",
+    "category": "ASP. NET",
+    "name": "電腦金鑰 驗證方法",
+    "description": "■ 這項原則設定決定 ASP.NET 3.5 環境之電腦金鑰使用何種驗證方 式 ■使用電腦金鑰,可設定加密及解 密金鑰,用以協助保護表單驗證 之Cookie 資料與網頁層級的檢視 狀態資料。電腦金鑰也可用來驗 證跨處理序工作階段狀態識別 ■ 系統採用 ASP.NET 3.5 版本時, 支援下列驗證方法: (1)AES(金鑰長度可為128,192或 256 位元) (2)MD5 (3)SHA1 (4)TripleDES(金鑰長度為192位 元) ■ ASP.NET 3.5 環境預設電腦金鑰驗 證方法為 SHA1 ■ 在變更.NET Framework 版本設定 中,分別有v2.0.x與 v4.0.x 兩種 選項,「v2.0.x」表示.NET Framework 版本包含3.0與3.5, 則適用此項原則設定 ■ 確認版本方式:IIS 管理員\\伺服器 \\動作\\變更.NET Framework 版本, 開啟確認版本",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器| 動作\\開啟功能\\區段 \\system.web\\machineKey Ivalidation",
+    "value": "SHA1 或 AES"
+  },
+  {
+    "item_number": 21,
+    "id": "TWGCB-04-014-0021",
+    "category": "ASP. NET 設定 建議",
+    "name": "電腦金鑰 (ASP.NET 4.5)",
+    "description": "■ 這項原則設定決定 ASP.NET 4.5 環境之電腦金鑰使用何種驗證方 式 ■使用電腦金鑰,可設定加密及解 密金鑰,用以協助保護表單驗證 之Cookie 資料與網頁層級的檢視 狀態資料。電腦金鑰也可用來驗 證跨處理序工作階段狀態識別 ■ 系統採用 ASP.NET 4.5 版本時, 支援下列驗證方法: (1)AES(金鑰長度可為128,192或 256 位元) (2)MD5 (3)SHA1 (4)TripleDES(金鑰長度為 192位 元) (5)HMACSHA256 (6)HMACSHA384 (7)HMACSHA512 ■ ASP.NET 4.5 環境預設電腦金鑰驗 證方法為 SHA256 ■ 在變更.NET Framework 版本設定 中,分別有 v2.0.x 與 v4.0.x 兩種 選項,「v4.0.x」表示.NET Framework 版本包含4.5,則適用 此項原則設定 ■ 確認版本方式:IIS 管理員\\伺服器 \\動作\\變更.NET Framework 版本, 開啟確認版本",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system.web\\machineKey Ivalidation",
+    "value": "HMACSHA2 56、 HMACSHA3 84 或 HMACSHA5 12"
+  },
+  {
+    "item_number": 22,
+    "id": "TWGCB-04-014-0022",
+    "category": "ASP. NET 設定 建議",
+    "name": ".NET 信任 層級",
+    "description": "■這項原則設定決定是否指定套用 到應用程式之程式碼存取安全性 (Code Access Security, CAS)層級 ■ 可選擇之信任層級如下: (1)Full(internal):指定未限制的權 限。授予 ASP.NET 應用程式權 限,以存取受制於作業系統安 全性之任何資源。支援所有特 殊權限操作。 (2)High(web_hightrust.config):指 定高程式碼存取安全性層級, ASP.NET 應用程式預設無法執 行下列任何一個動作: &gt;呼叫 Unmanaged 程式碼 &gt;呼叫處理的元件 &gt;寫入事件日誌 &gt;存取「訊息佇列」服務佇列 &gt;存取 ODBC、OleDb 或 Oracle 資料來源 (3)Medium(web_mediumtrust.confi g):指定中程式碼存取安全性層 級,表示除了高信任層級限制 外,ASP.NET 應用程式預設無 法執行下列任何一個動作: &gt;在應用程式目錄外存取檔案 &gt;存取登錄 &gt;進行網路或網頁服務呼叫 (4)Low(web_lowtrust.config):指 定低程式碼存取安全性層級, 表示除了中信任層級限制外, ASP.NET 應用程式預設無法執 行下列任何一個動作: &gt;寫入檔案系統 &gt;呼叫 Assert 方法 (5)Minimal(web_minimaltrust.confi g):指定最小的程式碼存取安全 性層級,表示ASP.NET 應用程 式只具有執行權限 ■ 預設信任層級為 Full(internal)",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system.web trust\\level",
+    "value": "Medium (web_medium trust.config) 、Low (web lowtrust .config)或 Minimal (web_minima ltrust.config)"
+  },
+  {
+    "item_number": 23,
+    "id": "TWGCB-04-014-0023",
+    "category": "ASP. NET 設定 建議",
+    "name": "X- Powered- By 標頭",
+    "description": "■ 這項原則設定決定是否移除X- Powered-By 標頭 ■ X-Powered-By 標頭為 HTTP 回應 標頭,提供網頁伺服器在回應標 頭中,呈現當前網頁應用程式所 使用之技術 ■ 移除 X-Powered-By 標頭可避免攻 擊者藉此取得網頁伺服器技術資 訊(如使用 ASP 或 PHP),並利用 特定版本已知漏洞對伺服器進行 攻擊,以提升網頁伺服器安全性",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器 \\IIS\\HTTP 回應標頭\\動 作\\開啟功能\\X- Powered-By\\動作\\移除",
+    "value": "移除"
+  },
+  {
+    "item_number": 24,
+    "id": "TWGCB-04-014-0024",
+    "category": "ASP. NET 設定 建議",
+    "name": "伺服器標 頭",
+    "description": "■這項原則設定決定是否移除伺服 器標頭 ■ 伺服器標頭為 HTTP回應標頭, 呈現當前網頁應用程式所使用之 技術 ■ 移除伺服器標頭是IS 10的一項 新功能,雖然透過回應標頭進行 站台識別並非唯一方法,但移除 後仍能增加難度,並阻止部分潛 在攻擊者,從而有助於降低風險",
+    "location": "站台",
+    "path": "IIS 管理員\\伺服器\\站台\\ 網站\\管理\\設定編輯器\\ 動作\\開啟功能\\區段 \\system.webServer\\securi ty\\requestFilteringremov eServerHeader",
+    "value": "True"
+  },
+  {
+    "item_number": 25,
+    "id": "TWGCB-04-014-0025",
+    "category": "要求 篩選 與其 他限",
+    "name": "允許的內 容長度上 限",
+    "description": "■ 這項原則設定決定由用戶端傳送 至伺服器之 HTTP request 之長度 上限,以位元組為單位 ■ 當內容長度超過上限時,IIS將會 記錄 404.13狀態在日誌檔中 ■ 限制允許之內容長度,可避免大 量之異常請求而導致網站服務異 常,以維持網站可用性,亦可降 低遭受緩衝區溢位攻擊之風險 ■預設值為 30,000,000位元組,設 為0代表長度無限制",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 要求篩選\\動作\\開啟功 能\\動作\\編輯功能設定| 要求限制\\允許的內容長 度上限(位元組)",
+    "value": "30,000,000 以 下,但須大 於0"
+  },
+  {
+    "item_number": 26,
+    "id": "TWGCB-04-014-0026",
+    "category": "要求 篩選 與其 他限 制模 組",
+    "name": "URL 長度 上限",
+    "description": "■ 這項原則設定決定URL 字串(不包 含查詢字串)之長度上限,以位元 組為單位 ■ 當 URL 長度超過上限時,IIS 將 會記錄 404.14狀態在日誌檔中 ■限制可接受之URL最大長度,可 避免因過長之URL 導致伺服器異 常 ■ 預設值為4,096位元組",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 要求篩選\\動作\\開啟功 能\\動作\\編輯功能設定| 要求限制\\URL 長度上 限(位元組)",
+    "value": "4096 以下, 但須大於0"
+  },
+  {
+    "item_number": 27,
+    "id": "TWGCB-04-014-0027",
+    "category": "要求 篩選 與其 他限 制模 組",
+    "name": "查詢字串 上限",
+    "description": "■這項原則設定決定查詢字串之長 度上限,以位元組為單位 ■ 當查詢字串超過上限時,IIS將會 記錄 404.15 狀態在日誌檔中 ■設定可接受的查詢字串長度,以 避免因過長之查詢字串導致應用 程式集區發生異常 ■ 預設值為 2,048 位元組",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 要求篩選\\動作\\開啟功 能\\動作\\編輯功能設定| 要求限制\\查詢字串上限 (位元組)",
+    "value": "2048 以下, 但須大於0"
+  },
+  {
+    "item_number": 28,
+    "id": "TWGCB-04-014-0028",
+    "category": "要求 篩選 與其 他限 制模 組",
+    "name": "允許高位 元字元",
+    "description": "■這項原則設定決定查詢字串是否 允許使用高位元字元(非 ASCII 字 元)。高位元字元之範例包括: X、bI 或 紅 ■ 當查詢字串因含有高位元字元而 被拒絕時,IIS 將會記錄 404.12狀 態在日誌檔中 ■ 禁止使用高位元字元,可確保 URL 中不會出現非 ASCII 文字, 以避免發生輸入特殊字元或跳脫 命令字元等攻擊語法 ■預設值為允許高位元字元",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 要求篩選\\動作\\開啟功 能\\動作\\編輯功能設定| 一般\\不勾選「允許高位 元字元」",
+    "value": "不允許"
+  },
+  {
+    "item_number": 29,
+    "id": "TWGCB-04-014-0029",
+    "category": "要求 篩選 與其 他限 制模 組",
+    "name": "允許雙重 逸出",
+    "description": "■這項原則設定決定是否允許 URL 雙重逸出,即是否允許URL 請求 使用雙重編碼技術 ■ 有些網站攻擊可以將URL 請求利 用雙重編碼技術(例如將” .. /”雙重 編碼成為 \"%252E%252E%252F\"),以繞過 安全防護機制或造成應用程式非 預期之反應 ■設定為不允許雙重逸出時,IS會 將URL 請求利用正規化 (Normalize)加以還原其原字元,並 執行兩次,如第一次與第二次之 結果不同,該請求就會被拒絕, 並記錄 404.11 狀態在日誌檔中 ■ 預設值為不允許",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 要求篩選\\動作\\開啟功 能\\動作\\編輯功能設定| 一般\\不勾選「允許雙重 逸出」",
+    "value": "不允許"
+  },
+  {
+    "item_number": 30,
+    "id": "TWGCB-04-014-0030",
+    "category": "要求 篩選 與其 他限 制模 組",
+    "name": "HTTP TRACE 方 法",
+    "description": "■這項原則設定決定允許或拒絕使 用 HTTP TRACE 方法 ■ HTTP TRACE 方法會傳回用戶端 提交的 HTTP請求內容,攻擊者 可利用此方法繞過 HttpOnly 限 制,來存取HTTP 標頭中所包含 的機敏資訊(如驗證資料或 Cookie) ■ 預設值為允許",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 要求篩選\\動作\\開啟功 能\\HTTP 指令動詞\\動作 \\拒絕指令動詞\\輸入 TRACE ]",
+    "value": "拒絕"
+  },
+  {
+    "item_number": 31,
+    "id": "TWGCB-04-014-0031",
+    "category": "要求 篩選 與其 他限 制模 組",
+    "name": "允許未列 出的副檔 名",
+    "description": "■這項原則設定決定是否允許未列 出的副檔名在網頁伺服器上被執 行 ■ 限制網頁伺服器只能執行特定之 檔案類型,可提升安全性 ■ 在取消勾選「允許未列出的副檔 名」後,必須將網站中所有使用 到之副檔名(例如 :. asax 、. cs 及.html 等)加入允許清單,網頁才 能正常運作",
+    "location": "伺服 器",
+    "path": "■ 取消勾選: IIS 管理員\\伺服器\\IS\\ 要求篩選\\動作\\開啟功 能\\動作\\編輯功能設定\\ 一般\\不勾選「允許未 列出的副檔名」 ■ 新增允許副檔名: IIS 管理員\\伺服器\\IS\\ 要求篩選\\動作\\開啟功 能\\動作\\允許副檔名",
+    "value": "不允許"
+  },
+  {
+    "item_number": 32,
+    "id": "TWGCB-04-014-0032",
+    "category": "要求 篩選 與其 他限 制模 組",
+    "name": "處理常式 權限",
+    "description": "■這項原則設定決定處理常式 (Handler)可賦予之權限(包含無、 讀取、寫入、指令碼及執行等5 種選項) ■設定處理常式不可同時具有「寫 入」與「執行/指令碼」之權限, 以降低在伺服器上執行惡意程式 碼之風險 ■處理常式預設擁有「讀取」與 「指令碼」權限",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\管理\\ 設定編輯器\\動作\\開啟 功能\\區段 \\system.webServer\\handl erslaccessPolicy",
+    "value": "不能同時擁 有執行/指令 碼與寫入權 限"
+  },
+  {
+    "item_number": 33,
+    "id": "TWGCB-04-014-0033",
+    "category": "要求 篩選 與其 他限 制模 組",
+    "name": "允許未指 定的 ISAPI 模 組",
+    "description": "■這項原則設定決定是否允許未指 定之ISAPI 模組在此伺服器上執 行 ■ 不允許未指定之ISAPI模組,可 防止惡意使用者將未經授權之 ISAPI 二進制檔案複製到網頁伺服 器中執行,以降低感染惡意程式 之風險",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\管理\\ 設定編輯器\\動作\\開啟 功能\\區段 \\system.webServer\\securi tylisapiCgiRestriction not ListedIsapisAllowed",
+    "value": "False"
+  },
+  {
+    "item_number": 34,
+    "id": "TWGCB-04-014-0034",
+    "category": "要求 篩選 與其 他限 制模 組",
+    "name": "允許未指 定的 CGI 模組",
+    "description": "■這項原則設定決定是否允許未指 定之CGI擴充模組在伺服器上執 行 ■ 不允許未指定之CGI模組,可防 止惡意使用者執行含有惡意指令 碼的CGI程式,以降低感染惡意 程式之風險",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\管理\\ 設定編輯器\\動作\\開啟 功能\\區段 \\system.webServer\\securi tylisapiCgiRestriction not ListedCgisAllowed",
+    "value": "False"
+  },
+  {
+    "item_number": 35,
+    "id": "TWGCB-04-014-0035",
+    "category": "要求 篩選 與其 他限 制模 組",
+    "name": "動態 IP 限 制",
+    "description": "■這項原則設定決定是否藉由限制 同一IP同時開啟連線數或限制同 一IP在一段期間內發送之最大要 求數量 ■透過動態IP限制功能,當超過限 制時,IIS就暫時不處理來自該IP 的請求,直接傳回 HTTP 錯誤以 節省資源,不再耗費頻寬或 CPU、記憶體處理要求,可降低 DDoS 攻擊影響 ■ 動態 IP 限制預設為停用",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器 \\IIS\\IP 位址及網域限制\\ 動作\\開啟功能\\動作\\編 輯動態限制設定",
+    "value": "啟用動態 IP 限制功能, 並依需求設 定「根據同 時要求的數 目拒絕 IP位 址」與「根 據超過一段 時間之要求 數目拒絕 IP 位址」參數"
+  },
+  {
+    "item_number": 36,
+    "id": "TWGCB-04-014-0036",
+    "category": "IIS 記 錄",
+    "name": "IIS 記錄檔 位置",
+    "description": "■ 這項原則設定決定 IIS 記錄檔存放 位置 ■ 記錄檔中含有IIS 運作時之相關回 應訊息,當網站服務異常或發生 資安事件時,記錄檔可提供系統 運作細節資訊供管理者參考。將 記錄檔存放在受管制之非系統磁 碟區中,將有助於降低發生系統 磁碟區故障、惡意變更與刪除及 遺失記錄之風險 ■ 預設存放位置為: %SystemDrive%\\inetpub\\logs\\LogFi les",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 記錄\\動作\\開啟功能\\記 錄檔\\目錄",
+    "value": "記錄檔存放 至受管制的 非系統磁碟 區"
+  },
+  {
+    "item_number": 37,
+    "id": "TWGCB-04-014-0037",
+    "category": "IIS 記 錄",
+    "name": "記錄檔選 取欄位",
+    "description": "■這項原則設定IIS 紀錄檔之選取欄 位 ■ IIS 預設已啟用記錄檔功能,並允 許管理者依需求自訂記錄項目, 例如 HTTP 要求/回應標頭、伺服 器變數及用戶端相關資訊",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IS\\ 記錄\\動作\\開啟功能\\記 錄檔\\選取欄位",
+    "value": "啟用,並依 需求選取記 錄欄位"
+  },
+  {
+    "item_number": 38,
+    "id": "TWGCB-04-014-0038",
+    "category": "IIS 記 錄",
+    "name": "記錄檔格 式",
+    "description": "■這項原則設定決定記錄檔之格式 ■ 記錄檔的格式選項如下: (1)IIS:設定 IIS 使用 Microsoft IIS 記錄檔格式來記錄站台的相關 資訊。此格式會由HTTP.sys處 理,而且是「固定」的ASCII 文字格式,這表示無法自訂要 記錄的欄位。欄位會以逗號分 隔,而時間使用本地時間記錄 (2)NCSA:設定IIS 使用「國家超 級計算應用中心」(NCSA)通用 記錄檔格式來記錄站台的相關 資訊。此格式會由HTTP.sys處 理,而且是「固定」的ASCII 文字格式,這表示您無法自訂 要記錄的欄位。欄位會以空格 分隔,而時間會使用 Coordinated Universal Time(UTC)位移記錄成本地時間 (3)W3C:使用全球資訊網協會 (W3C)擴充記錄檔格式來記錄站 台的相關資訊。此格式會由 HTTP.sys處理,而且是「可自 訂」的ASCII 文字格式,這表 示可以指定要記錄的欄位。若 要在「W3C記錄欄位」對話方 塊中指定要記錄的欄位,請按 一下「記錄」頁上的「選取欄 位」。欄位會以空格分隔,而 時間會使用 Coordinated Universal Time (UTC)記錄 (4)自訂:設定IIS在自訂記錄模組 使用自訂格式。選取此選項 時,「記錄」頁面會停用,因 為自訂記錄無法在 IIS 管理員中 設定 ■ 記錄檔格式預設為 W3C",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 記錄\\動作\\開啟功能\\記 錄檔\\格式",
+    "value": "W3C"
+  },
+  {
+    "item_number": 39,
+    "id": "TWGCB-04-014-0039",
+    "category": "IIS 記 錄",
+    "name": "記錄事件 目的地",
+    "description": "■這項原則設定決定將網站訊息僅 記錄在IIS 記錄檔、或只寫入 ETW(Event Tracing for Windows) 事件記錄、或兩者都寫入 ■ 將網站訊息寫到 Windows 內之事 件檢視器,管理者可使用標準查 詢工具檢視即時記錄內容,亦可 完整掌握整個網站之運作情形",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\IIS\\ 記錄\\動作\\開啟功能\\記 錄事件目的地",
+    "value": "記錄檔和 ETW 事件二 者"
+  },
+  {
+    "item_number": 40,
+    "id": "TWGCB-04-014-0040",
+    "category": "FTP 要求",
+    "name": "FTP SSL 設定",
+    "description": "■這項原則設定決定FTP是否使用 SSL 連線,以保護所有傳輸資料 ■ 選項如下: (1)允許SSL連線:允許FTP伺服 器支援與用戶端進行非 SSL 與 SSL 連線 (2)需要 SSL 連線:FTP伺服器與 用戶端之間的通訊強制使用 SSL 加密",
+    "location": "伺服 器",
+    "path": "■ IIS 管理員\\伺服器\\管 理\\設定編輯器\\動作\\開 啟功能\\區段 \\system.applicationHost IsiteDefaults ftpServerls ecurity\\ssl\\controlChann elPolicy ■ IIS 管理員\\伺服器\\管 理\\設定編輯器\\動作\\開",
+    "value": "SslRequire"
+  },
+  {
+    "item_number": 41,
+    "id": "TWGCB-04-014-0041",
+    "category": "FTP 要求",
+    "name": "FTP 登入 嘗試限制",
+    "description": "■這項原則設定決定是否限制 FTP 帳戶登入失敗之最大次數 ■ 啟用FTP登入嘗試限制,可減輕 攻擊者利用已發現之帳戶進行暴 力攻擊所造成之影響 ■ 預設為停用",
+    "location": "伺服 器",
+    "path": "IIS 管理員\\伺服器\\管理\\ 設定編輯器\\動作\\開啟 功能\\區段 \\system.ftpServer\\securit ylauthentication denyBy Failure\\enabled",
+    "value": "True"
+  },
+  {
+    "item_number": 42,
+    "id": "TWGCB-04-014-0042",
+    "category": "傳輸 加密",
+    "name": "HSTS 標 頭",
+    "description": "■這項原則設定決定是否在HTTP 回應標頭設定使用 HTTP 嚴格傳 輸安全(HTTP Strict Transport Security,以下簡稱HSTS) ■ HSTS 主要用來宣告瀏覽器與伺服 器之間的通訊方式必須強制使用 TLS/SSL 加密通道,只要從伺服 器端送出一個 HSTS 標頭(Header) 給瀏覽器,就可以告訴瀏覽器在 未來某段時間內一律使用SSL 連 接該網站(可設定包含所有子域名 網站),如果有發生憑證失效之情 況,使用者將無法瀏覽該網站, 如此一來便可大幅減少中間人攻 擊之問題發生",
+    "location": "伺服 器",
+    "path": "■ IIS 管理員\\伺服器 \\IIS\\HTTP 回應標頭\\動 作\\開啟功能\\新增 ■ 名稱:Strict-Transport- Security ■ 值:max-age=480(已 使用 HTTPS 連線的網 站 480 秒內不再檢查)",
+    "value": "■ 名稱: Strict- Transport- Security"
+  },
+  {
+    "item_number": 43,
+    "id": "TWGCB-04-014-0043",
+    "category": "傳輸 加密",
+    "name": "SSLv2",
+    "description": "■這項原則設定決定是否停用 SSLv2 加密協定 ■ SSLv2 存在已知弱點,為提升安 全性應停用 SSLv2 加密協定",
+    "location": "regedit",
+    "path": "■ 執行以下步驟: (1)確認 HKLM\\System\\Cu rrentControlSet\\Contr ol\\SecurityProviders\\ SCHANNEL\\Protoco ls\\SSL 2.0\\Server Enabled 機碼是否存在,存",
+    "value": "停用"
+  },
+  {
+    "item_number": 44,
+    "id": "TWGCB-04-014-0044",
+    "category": "傳輸 加密",
+    "name": "SSLv3",
+    "description": "■這項原則設定決定是否停用 SSLv3 加密協定 ■ 目前已知 SSLv3 存在 POODLE 弱 點,為提升安全性應停用 SSLv3 加密協定",
+    "location": "regedit",
+    "path": "■ 執行以下步驟: (1)確認 HKLM\\System\\Cu rrentControlSet\\Contr ol\\SecurityProviders\\ SCHANNEL\\Protoco",
+    "value": "停用"
+  },
+  {
+    "item_number": 45,
+    "id": "TWGCB-04-014-0045",
+    "category": "傳輸 加密",
+    "name": "TLS 1.0",
+    "description": "■這項原則設定決定是否停用 TLS 1.0 加密協定 ■ SSL 加密協定與早期版本的 TLS 1.0 在2016年6月30日之後,已 被視為不安全之加密協定",
+    "location": "regedit",
+    "path": "執行以下步驟: (1)確認 HKLM\\System\\Cu rrentControlSet\\Contr ol\\SecurityProviders\\ SCHANNEL\\Protoco ls\\TLS 1.0\\Server Enabled 機碼是否存在,存 在時,確認 Enabled 類型為 DWord 且資 料欄位值為0,不存 在時,請於 TLS 1.0 下新增機碼且命名 為 Server,並新增 DWord 值,名稱設 為Enabled,資料欄 位值設為0 (2)確認 HKLM\\System\\Cu rrentControlSet\\Contr",
+    "value": "停用"
+  },
+  {
+    "item_number": 46,
+    "id": "TWGCB-04-014-0046",
+    "category": "傳輸 加密",
+    "name": "TLS 1.1",
+    "description": "■這項原則設定決定是否停用 TLS 1.1 加密協定 ■ TLS 1.1 加密協定不支援較安全之 新加密演算法,建議停用 TLSv1.1 以降低資訊洩露之風險",
+    "location": "regedit",
+    "path": "執行以下步驟: (1)確認 HKLM\\System\\Cu rrentControlSet\\Contr ol\\SecurityProviders\\ SCHANNEL\\Protoco ls\\TLS 1.1\\Server Enabled 機碼是否存在,存 在時,確認 Enabled 類型為 DWord 且資 料欄位值為0,不存 在時,請於 TLS 1.1 下新增機碼且命名 為 Server,並新增 DWord 值,名稱設",
+    "value": "停用"
+  },
+  {
+    "item_number": 47,
+    "id": "TWGCB-04-014-0047",
+    "category": "傳輸 加密",
+    "name": "TLS 1.2",
+    "description": "■這項原則設定決定是否啟用 TLS 1.2 加密協定 ■ TLS 1.2 為較新之加密協定,用以 保護 HTTP 傳輸之機密性與完整 性",
+    "location": "regedit",
+    "path": "執行以下步驟: (1)確認 HKLM\\System\\Cu rrentControlSet\\Contr ol\\SecurityProviders\\ SCHANNEL\\Protoco ls\\TLS 1.2\\Server\\Enabled 機碼是否存在,存 在時,確認 Enabled 類型為 DWord 且資 料欄位值為1,不存 在時,請於 TLS 1.2",
+    "value": "啟用"
+  },
+  {
+    "item_number": 48,
+    "id": "TWGCB-04-014-0048",
+    "category": "傳輸 加密",
+    "name": "NULL Cipher",
+    "description": "■這項原則設定決定是否停用 NULL Cipher ■ NULL Cipher 無法確保資料機密性 或完整性",
+    "location": "regedit",
+    "path": "■ 確認下列機碼是否存 在: · HKLM\\System\\Current ControlSet\\Control\\Sec urity Providers SCHAN NEL\\Ciphers\\NULL\\En abled ■ 不存在時,表示停用",
+    "value": "停用"
+  },
+  {
+    "item_number": 49,
+    "id": "TWGCB-04-014-0049",
+    "category": "傳輸 加密",
+    "name": "DES",
+    "description": "■這項原則設定決定是否停用 DES 加密套件 ■ DES 已被視為安全性不足之加密 套件",
+    "location": "regedit",
+    "path": "■ 確認下列機碼是否存 在: . HKLM\\System\\Current ControlSet\\Control\\Sec urity Providers SCHAN NEL\\Ciphers\\DES 56/56\\Enabled ■ 不存在時,表示停用 ■ 存在時,確認 Enabled 類型為 DWord 且資料 欄位值為 0",
+    "value": "停用"
+  },
+  {
+    "item_number": 50,
+    "id": "TWGCB-04-014-0050",
+    "category": "傳輸 加密",
+    "name": "RC4 加密 套件",
+    "description": "■這項原則設定決定是否停用 RC4 加密套件 ■ 在 TLS與 SSL 連線中使用RC4加 密套件可能會讓攻擊者能夠進行 中間人攻擊,並從加密之Session 中還原純文字內容",
+    "location": "regedit",
+    "path": "■ 確認以下4個機碼是 否存在: (1)HKLM\\System\\Curr entControlSet\\Contro \\\\SecurityProviders \\S CHANNEL\\Ciphers\\ RC4 40/128\\Enabled (2)HKLM\\System\\Curr entControlSet\\Contro l\\SecurityProviders\\S CHANNEL\\Ciphers\\ RC4 56/128\\Enabled (3)HKLM\\System\\Curr entControlSet\\Contro \\\\SecurityProviders\\S CHANNEL\\Ciphers\\ RC4 64/128\\Enabled (4)HKLM\\System\\Curr entControlSet Contro \\\\Security ProvidersIS",
+    "value": "停用"
+  },
+  {
+    "item_number": 51,
+    "id": "TWGCB-04-014-0051",
+    "category": "傳輸 加密",
+    "name": "AES 128/128",
+    "description": "■這項原則設定決定是否啟用 AES 128/128 加密套件 ■ AES 128/128 加密套件已被視為安 全性不足,建議停用",
+    "location": "regedit",
+    "path": "■ 確認下列機碼是否存 在: . HKLM\\System\\Current ControlSet\\Control\\Sec urityProviders SCHAN NEL\\Ciphers\\AES 128/128\\Enabled ■ 不存在時,表示停用",
+    "value": "停用"
+  },
+  {
+    "item_number": 52,
+    "id": "TWGCB-04-014-0052",
+    "category": "傳輸 加密",
+    "name": "AES 256/256",
+    "description": "■這項原則設定決定是否啟用 AES 256/256 加密套件 ■ AES 256/256 加密套件可用以保護 HTTP 傳輸之機密性與完整性 ■預設為啟用,且機碼值不存在",
+    "location": "regedit",
+    "path": "■ 確認下列機碼是否存 在: . HKLM\\System\\Current ControlSet\\Control\\Sec urityProviders SCHAN NEL\\Ciphers\\AES 256/256\\Enabled ■ 不存在時,表示啟用 ■ 存在時,確認 Enabled 類型為 DWord 且資料 欄位值為 1",
+    "value": "啟用"
+  },
+  {
+    "item_number": 53,
+    "id": "TWGCB-04-014-0053",
+    "category": "傳輸 加密",
+    "name": "TLS 加密 套件順序",
+    "description": "■ 這項原則設定決定 TLS 加密套件 順序",
+    "location": "regedit",
+    "path": "針對 HKLM\\System\\Curren tControlSet\\Control\\Cryp",
+    "value": "TLS AES 25 6 GCM SHA 384,"
+  }
+]
