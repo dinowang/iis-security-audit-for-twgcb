@@ -67,6 +67,8 @@ IISSecurityAudit.exe
     - 審核狀態 (通過/不符合/手動檢查/錯誤)
     - 期望值與實際值
     - 詳細說明與建議
+- **報告範例**
+  ![alt text](images/README/report-sample.png)
 
 ## 📊 檢查涵蓋範圍
 
